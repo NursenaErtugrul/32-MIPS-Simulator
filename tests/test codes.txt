@@ -1,0 +1,155 @@
+# example1 
+#for(int i = 0; i < 4; i++)
+#    j += 5;
+
+add $t0, $zero, $zero   # t0 = 0
+j cond                  # goto loop condition
+loop:
+    addi $s0, $s0, 5
+    addi $t0, $t0, 1
+cond:
+    slti $t1, $t0, 4
+    bne $t1, $zero, loop
+
+
+
+# example2 
+addi $t0, $t0, 5
+addi $t1, $t1, 3
+or $t2, $t0, $t1
+
+addi $s5, $s0, -25
+addi $s6, $s0, 25
+slt $s7, $s5, $s6
+
+
+
+# example3 +
+addi $s1, $s1, 5        
+addi $s2, $s2, 6
+addi $s3, $s3, 2
+
+beq $s3, $s4, true          # if $s3 == $s4 goto true
+sub $s0, $s1, $s2           # else $s0 = $s1 - $s2
+j exit
+true: add $s0, $s1, $s2     # $s0 = $s1 + $s2
+exit: 
+
+
+
+# example4 
+addi $t1, $t0, 1
+addi $t4, $t0, 1            # set temp to 1
+
+bne $t1, $t4, C2_COND       # case 1 false : branch to case 2 condition
+j C1_BODY                   # case 1 true : branch to case 1 body imp.
+
+C2_COND: addi $t4, $t0, 2   # set temp to 2
+bne $t1, $t4, C3_COND       # case 2 false : branch to case 3 condition
+j C2_BODY                   # case 2 true : branch to case 2 body imp.
+
+C3_COND: addi $t4, $t0, 3   # set temp to 3
+bne $t1, $t4, EXIT          # case 3 false : exit
+j C3_BODY                   # case 3 true : branch to case 3 body imp.
+
+C1_BODY: addi $t1, $t1, 1   # case 1 body: i++
+j EXIT                      # break
+C2_BODY: addi $t1, $t1, 2   # case 2 body: i += 2
+j EXIT                      # break
+C3_BODY: addi $t1, $t1, 3   # case 3 body: i += 3
+EXIT:
+
+#example 5
+
+
+addi $t0, $zero, 10
+addi $t1, $zero, 55
+addi $t4, $zero, 0
+add $t2, $t0, $t0
+sub $t2, $t2, $t0
+and $s0, $t0, $t1
+or $s1, $t0, $t1
+xor $s2, $t0, $t1
+andi $s3, $t0, 55
+ori $s4, $t0, 55
+addi $t0, $zero, 15
+div $s4, $t0, $t0
+slt $s5, $t0, $t1
+slti $s6, $t0, 11
+Exit:
+
+
+#example 6
+.data
+array:
+    .word 90, 67, 30, 1, 45, 50, 11, 33, 67, 19, 2
+.text
+.globl main
+main:
+
+bubbleSort:
+    lui     $t0, 0x1001
+    addi    $t1, $zero, 0     # i = 0;
+    addi    $t2, $zero, 0     # j = 0;
+    addi    $s1, $zero, 10   # array length
+loop:
+    beq     $t1, $s1, exit   # exit if i == length of array - 1
+    lui     $t0, 0x1001
+    addi    $t2, $zero, 0     # j = 0;
+forLoop:
+    beq     $t2, $s1, exitForLoop   # exit loop if j == length of array - 1
+    lw      $a0, 0($t0)         # a0 = array[j]
+    lw      $a1, 4($t0)         # a1 = array[j+1]
+    slt     $t3, $a1, $a0       # t3 = (a1 < a0) ? 1 : 0
+    beq     $t3, $zero, update  # if a1 >= a0, skip update
+    sw      $a1, 0($t0)         # a[j+1] = a[j]
+    sw      $a0, 4($t0)         # a[j] = a[j+1]
+update:
+    addi    $t2, $t2, 1         # j++
+    addi    $t0, $t0, 4         # point to next element -->
+    j       forLoop
+exitForLoop:
+    addi    $t1, $t1, 1         # i++;
+    j       loop
+exit:
+  
+
+
+#example 7
+
+addi $t0, $zero, 15
+addi $t1, $zero, 55
+jal Loop
+Loop:
+slt $s0, $t1, $t0
+addi $t0, $t0, 5
+beq $s0, $zero, Loop
+addi $t0, $zero, 15
+addi $t1, $zero, 55
+
+Loop2:
+slt $t8, $t0, $t1
+addi $t0, $t0, 5
+bne $t8, $zero, Loop2
+addi $t3, $zero, 1
+addi $t4, $t4, 1
+slt $t5, $t3, $t4
+bne $t5, $zero, LastLabel
+jr $ra
+LastLabel:
+addi $t0, $zero, 15
+j Exit
+addi $t1, $zero, 55
+Exit:
+
+#example 8 
+addi $t0, $zero, 20
+addi $t1, $zero, 1
+addi $t2, $zero, -20
+sll $s0, $t0, $t1
+srl $s1, $t0, $t1
+sra $s3, $t2, $t1
+Exit:
+
+
+

@@ -1,0 +1,116 @@
+input {
+    font-size: 18px;
+    opacity: 0;
+}
+
+input:hover,
+input:active {
+    cursor: pointer;
+}
+
+.main-nav {
+    width: 100%;
+    clear: both;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    justify-content: space-between;
+    font-size: 18px;
+    overflow: visible;
+    z-index: 0;
+}
+
+#navbar-buttons-id {
+    float: right;
+    margin: 0;
+    cursor: pointer;
+}
+
+.nav-buttons {
+    float: left;
+    background-color: #292929;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 6px;
+    margin: 0;
+}
+.nav-buttons:hover {
+    cursor: default;
+    background-color: grey;
+    color: white;
+    transition-duration: 0.1s;
+}
+
+.main-nav button:nth-child(1) {
+    float: left;
+    height: 100%;
+    width: 100px;
+    margin-top: 20px;
+    background-color: rgb(118, 13, 124);
+    color: #d3d3d3;
+    border: none;
+    text-decoration: none;
+    box-shadow: none;
+    margin-left: 40px;
+    cursor: pointer;
+    outline: none;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    padding-left: 7px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.main-nav button:nth-child(2) {
+    float: left;
+    height: 100%;
+    width: 100px;
+    background-color: rgb(76, 6, 80);
+    color: #d3d3d3;
+    border: none;
+    text-decoration: none;
+    box-shadow: none;
+    cursor: pointer;
+    outline: none;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: bold;
+    margin-right: 350px;
+    margin-top: 20px;
+    margin-left: 29px;
+    padding-left: 2px;
+    padding-top: 10px;
+    padding-right: 0px;
+}
+
+.main-nav button:nth-child(1):hover,
+.main-nav button:nth-child(2):hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    transition-duration: 0.1s;
+}
+
+button:active {
+    background-color: #005406;
+    cursor: pointer;
+}
+
+#navbar-right-id {
+    clear: both;
+    float: right;
+    overflow: visible;
+}
+
+.navbar-buttons-right {
+    float: right;
+    height: 100%;
+    margin-right: 89px;
+    background-color: #17171700;
+    color: #d3d3d3;
+    border: none;
+}

@@ -1,0 +1,129 @@
+.sidebar {
+    width: 85%;
+    height: 722px;
+    margin-left: 60px;
+    margin-top: 60px;
+    overflow: auto;
+    background-color: rgba(71, 10, 107, 0.488);
+}
+
+.sidebar-menu {
+    margin-top: 15px;
+    padding: 0px;
+    width: 100%;
+    clear: both;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-menu button {
+    border-radius: 12px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    font-size: 18px;
+    background-color: #07748a;
+    color: white;
+    box-shadow: none;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-right: 3px solid rgb(9, 195, 170);
+}
+
+.sidebar-menu button:hover {
+    background-color: rgb(3, 255, 95);
+    color: white;
+}
+
+#b1 {
+    background-color: rgba(6, 99, 122, 0.635);
+    margin-right: 10px;
+    /* background-color: #333333; */
+}
+
+#b2 {
+    background-color: rgba(6, 99, 122, 0.635);
+}
+
+#regs {
+    display: block;
+}
+
+#mem {
+    display: none;
+    border: 5px solid #5fcb00;
+    margin: 5px;
+    padding: 5px;
+}
+
+.sidebar-options {
+    background-color: #353535;
+    width: 100%;
+    clear: both;
+    margin: 0px;
+    padding: 0px;
+    /* margin-left: 0px; */
+    padding-left: 0px;
+    /* float: left; */
+}
+
+.sidebar-options button {
+    font-family: 'Open Sans', sans-serif;
+    /* padding: 0px; */
+    margin: 0px;
+    padding-top: 3px;
+    /* margin-top: 0px; */
+    padding-bottom: 3px;
+    font-size: 16px;
+    background-color: #7f0909;
+    color: white;
+    box-shadow: none;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-right: 1px solid grey;
+}
+
+#sb1 {
+    background-color: gray;
+}
+
+ul,
+li {
+    padding: 0px;
+    margin: 0px;
+    clear: both;
+    /* float:left; */
+}
+
+.registers-table {
+    margin: 0px;
+    width: 100%;
+    clear: both;
+    padding: 0px;
+    color: white;
+}
+
+tr {
+    padding: 0px;
+    margin: 0px;
+}
+
+td {
+    margin: 0px;
+    padding: 7px;
+    width: 50%;
+}
+
+#memory-tabledec {
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+}
+
+
+#r0, #at, #v0, #v1, #a0, #a1, #a2, #a3, #t0, #t1, #t2, #t2, #t3, #t4, #t5, #t6, #t7, #s0, #s1, #s2, #s3, #s4, #s5, #s6, #s7, #t8, #t9, #k0, #k1, #gp, #sp, #s8, #ra {
+    background-color: rgba(1, 77, 96, 0.819);
+}
